@@ -1,5 +1,7 @@
 # Skin Lesion Classification CNN
 
+**🔴 [Live Clinical Demo Available Here](https://ibn-e-muhammad-datacrumbs-capstone-project-6-app-luu0uw.streamlit.app/)**
+
 ## Project Log & Documentation
 
 **Project Objective:** Build, evaluate, and deploy a custom Convolutional Neural Network to classify skin lesion images into Binary categories (Benign vs. Malignant) using the Streamlit framework.
@@ -17,7 +19,17 @@
 
 To run the Medical Lesion Analyzer locally, follow these steps:
 
-### 1. Environment Setup
+### 1. Dataset Integration
+To train or evaluate the pipeline locally, you must first acquire and structure the dataset:
+1. **Download:** Navigate to the [HAM10000 Dataset on Kaggle](https://www.kaggle.com/datasets/surajghuwalewala/ham1000-segmentation-and-classification).
+2. **Extract:** Unzip the archive into the `data/` directory at the root of this project.
+3. **Structure:** Ensure the `images/` folder and the `GroundTruth.csv` file are present inside `data/`. You may safely ignore or delete the `masks/` folder, as this architecture does not utilize image segmentation.
+4. **Process:** Run the preprocessing script to automatically generate the scaled train/val/test splits and compute the mathematical class weights:
+   ```bash
+   python -m src.data_preprocessing
+   ```
+
+### 2. Environment Setup
 Create a Python virtual environment and install the required dependencies:
 ```bash
 python -m venv venv
@@ -30,7 +42,7 @@ source venv/bin/activate
 pip install tensorflow==2.15.0 streamlit numpy Pillow opencv-python pandas scikit-learn matplotlib seaborn
 ```
 
-### 2. Run the Application
+### 3. Run the Application
 Launch the Single Page Application (SPA) Streamlit UI:
 ```bash
 streamlit run app.py
