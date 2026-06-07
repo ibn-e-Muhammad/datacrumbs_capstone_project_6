@@ -13,6 +13,32 @@
 
 ---
 
+## Quick Start & Setup
+
+To run the Medical Lesion Analyzer locally, follow these steps:
+
+### 1. Environment Setup
+Create a Python virtual environment and install the required dependencies:
+```bash
+python -m venv venv
+
+# Windows
+venv\Scripts\activate
+# Linux/macOS
+source venv/bin/activate
+
+pip install tensorflow==2.15.0 streamlit numpy Pillow opencv-python pandas scikit-learn matplotlib seaborn
+```
+
+### 2. Run the Application
+Launch the Single Page Application (SPA) Streamlit UI:
+```bash
+streamlit run app.py
+```
+This will automatically open the clinical interface in your default web browser at `http://localhost:8501`.
+
+---
+
 ### Execution Logs
 
 **[2026-06-06] Phase 1: Planning & Setup**
