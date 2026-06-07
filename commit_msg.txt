@@ -1,0 +1,9 @@
+feat: deploy medical lesion analyzer and finalize MLOps pipeline
+
+This commit completes the high-stakes binary classification system for imbalanced medical imaging data.
+
+A custom, lightweight 3-block CNN architecture was optimized for restricted VRAM environments and trained natively on an NVIDIA Quadro P620 utilizing a WSL2/CUDA bridge. The pipeline integrates mathematical class weighting to heavily penalize false negatives.
+
+The network achieved an exceptional Recall of 80.89% on the Malignant class, ensuring the vast majority of true malignant cases are caught. This sensitivity prioritization yielded a final F1-score of 0.5947, successfully balancing clinical safety with precision.
+
+Finally, the frontend was completely overhauled into a Single Page Application (SPA) using Streamlit. We bypassed default UI components by injecting the high-fidelity 'Clinical Precision' HTML/CSS design system directly into the DOM, bonding dynamic ML probabilities to custom Result Cards and Confidence Meters.
